@@ -1,4 +1,5 @@
 const resourcesData = [
+    // --- 2 ĐỀ ÔN TẬP PHÍA TRÊN ---
     {
         tagName: "Vật Lý 10",
         category: "khoa-hoc",
@@ -13,12 +14,21 @@ const resourcesData = [
         desc: "Bộ đề ôn tập trắc nghiệm & tự luận HK1 kèm lời giải chi tiết (Thầy Lại Đắc Hợp - Moon.vn).",
         link: "https://drive.google.com/file/d/1jPcTrVIUK_PaGMVyXu7FMGdvsks5vNV9/view?usp=sharing"
     },
+
+    // --- 5 VIDEO BÀI 1 THEO ĐÚNG THỨ TỰ ---
+    {
+        tagName: "Video YouTube",
+        category: "khoa-hoc",
+        title: "🎬 [Bài Giảng] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí",
+        desc: "Video bài giảng tổng quan Bài 1: Làm quen với Vật lí. Tải file PDF đính kèm tại website.",
+        link: "https://youtu.be/hzhv-_aaVU0"
+    },
     {
         tagName: "Video YouTube",
         category: "khoa-hoc",
         title: "🎬 [Bài Giảng] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí (1.1)",
         desc: "Video bài giảng chi tiết Bài 1: Làm quen với Vật lí (Phần 1.1). Tải file PDF đính kèm tại website.",
-        link: "https://youtu.be/hzhv-_aaVU0"
+        link: "DÁN_LINK_VIDEO_1_1_VÀO_ĐÂY"
     },
     {
         tagName: "Video YouTube",
