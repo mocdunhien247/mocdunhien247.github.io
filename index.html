@@ -21,7 +21,6 @@
             --radius: 12px;
         }
 
-        /* Dark Mode variables */
         body.dark-mode {
             --bg-color: #121212;
             --card-bg: #1e1e1e;
@@ -41,7 +40,6 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* Header Navigation */
         header {
             background-color: var(--card-bg);
             border-bottom: 1px solid var(--border-color);
@@ -65,7 +63,6 @@
             cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;
         }
 
-        /* Hero Banner */
         .hero {
             background: linear-gradient(135deg, #2c5e3b 0%, #1e4228 100%);
             color: white; padding: 50px 20px; text-align: center;
@@ -85,7 +82,6 @@
             flex: 1; font-size: 0.95rem; border-radius: 30px; color: #333;
         }
 
-        /* Category Filter Buttons */
         .filter-container {
             display: flex; justify-content: center; gap: 10px;
             margin: 30px 0 10px 0; flex-wrap: wrap;
@@ -102,7 +98,6 @@
             background: var(--primary-color); color: white; border-color: var(--primary-color);
         }
 
-        /* Main Content Layout */
         .main-wrapper {
             max-width: 1200px; margin: 20px auto 40px auto; padding: 0 20px;
             display: grid; grid-template-columns: 2.8fr 1fr; gap: 30px;
@@ -114,7 +109,6 @@
             border-bottom: 2px solid var(--border-color); padding-bottom: 10px;
         }
 
-        /* Resource Grid */
         .resource-grid {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px;
         }
@@ -147,7 +141,6 @@
 
         .btn-download:hover { background: var(--primary-hover); }
 
-        /* Sidebar Widgets */
         .sidebar-widget {
             background: var(--card-bg); padding: 20px; border-radius: var(--radius);
             box-shadow: var(--shadow); border: 1px solid var(--border-color); margin-bottom: 25px;
@@ -161,7 +154,6 @@
         .notice-list { list-style: none; }
         .notice-list li { font-size: 0.85rem; padding: 8px 0; border-bottom: 1px dashed var(--border-color); }
 
-        /* Footer */
         footer {
             background: #181d19; color: #b0b7b1; padding: 30px 20px 20px 20px; margin-top: 50px;
         }
@@ -171,7 +163,6 @@
             justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
         }
 
-        /* Back to Top Button */
         #backToTop {
             position: fixed; bottom: 30px; right: 30px; background: var(--primary-color);
             color: white; border: none; width: 40px; height: 40px; border-radius: 50%;
@@ -187,7 +178,6 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">
@@ -200,7 +190,6 @@
         </div>
     </header>
 
-    <!-- Hero Banner -->
     <section class="hero">
         <div class="hero-content">
             <h1>MỘC DU NHIÊN - TRẠM TÁM 247</h1>
@@ -211,7 +200,6 @@
         </div>
     </section>
 
-    <!-- Category Filters -->
     <div class="filter-container">
         <button class="filter-btn active" data-filter="all">Tất Cả</button>
         <button class="filter-btn" data-filter="ngoai-ngu">Ngoại Ngữ</button>
@@ -220,55 +208,16 @@
         <button class="filter-btn" data-filter="marketing">Marketing</button>
     </div>
 
-    <!-- Main Content -->
     <div class="main-wrapper">
         <main>
             <h2 class="section-title">
                 <i class="fa-solid fa-graduation-cap"></i> Danh Sách Tài Liệu
             </h2>
-            
             <div class="resource-grid" id="resourceGrid">
-                
-                <div class="card" data-category="ngoai-ngu">
-                    <div class="card-body">
-                        <span class="card-tag">Ngoại Ngữ</span>
-                        <h3 class="card-title">Bộ Giáo Trình Tiếng Anh Giao Tiếp Thực Tế</h3>
-                        <p class="card-desc">Tổng hợp Ebook & Audio luyện phản xạ Tiếng Anh cấp tốc đầy đủ các chủ đề.</p>
-                        <a href="#" target="_blank" class="btn-download"><i class="fa-solid fa-download"></i> Xem & Tải Về</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="khoa-hoc">
-                    <div class="card-body">
-                        <span class="card-tag">Khóa Học</span>
-                        <h3 class="card-title">Khóa Học Photoshop & Thiết Kế Đồ Họa Cơ Bản</h3>
-                        <p class="card-desc">Bộ video bài giảng từng bước dành cho người mới bắt đầu thiết kế banner, hình ảnh.</p>
-                        <a href="#" target="_blank" class="btn-download"><i class="fa-solid fa-download"></i> Xem & Tải Về</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="tin-hoc">
-                    <div class="card-body">
-                        <span class="card-tag">Tin Học Văn Phòng</span>
-                        <h3 class="card-title">Tổng Hợp 100+ Mẫu Excel Kế Toán & Quản Lý</h3>
-                        <p class="card-desc">File Excel tính toán sẵn công thức giúp tối ưu công việc quản lý thu chi, nhân sự.</p>
-                        <a href="#" target="_blank" class="btn-download"><i class="fa-solid fa-download"></i> Xem & Tải Về</a>
-                    </div>
-                </div>
-
-                <div class="card" data-category="marketing">
-                    <div class="card-body">
-                        <span class="card-tag">Marketing</span>
-                        <h3 class="card-title">Sổ Tay Marketing & Xây Dựng Thương Hiệu</h3>
-                        <p class="card-desc">Tài liệu hướng dẫn lập kế hoạch Truyền thông & Marketing chi tiết từ A-Z.</p>
-                        <a href="#" target="_blank" class="btn-download"><i class="fa-solid fa-download"></i> Xem & Tải Về</a>
-                    </div>
-                </div>
-
+                <!-- Tự động đổ dữ liệu từ data.js -->
             </div>
         </main>
 
-        <!-- Sidebar -->
         <aside>
             <div class="sidebar-widget">
                 <h3 class="widget-title"><i class="fa-solid fa-bell"></i> Thông Báo Trạm 247</h3>
@@ -288,7 +237,6 @@
         </aside>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div>
@@ -301,17 +249,41 @@
         </div>
     </footer>
 
-    <!-- Back To Top Button -->
     <button id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
 
-    <!-- JavaScript xử lý tính năng thông minh -->
-    <script>
-        // 1. Chức năng Tìm Kiếm Trực Tiếp
-        const searchInput = document.getElementById('searchInput');
-        const cards = document.querySelectorAll('.card');
+    <!-- Nối file dữ liệu data.js -->
+    <script src="data.js"></script>
 
+    <script>
+        const grid = document.getElementById('resourceGrid');
+        
+        function renderCards() {
+            if (typeof resourcesData === 'undefined') return;
+            grid.innerHTML = '';
+            resourcesData.forEach(item => {
+                const cardHTML = `
+                    <div class="card" data-category="${item.category}">
+                        <div class="card-body">
+                            <span class="card-tag">${item.tagName}</span>
+                            <h3 class="card-title">${item.title}</h3>
+                            <p class="card-desc">${item.desc}</p>
+                            <a href="${item.link}" target="_blank" class="btn-download">
+                                <i class="fa-solid fa-download"></i> Xem & Tải Về
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        renderCards();
+
+        // 1. Tìm kiếm
+        const searchInput = document.getElementById('searchInput');
         searchInput.addEventListener('keyup', function(e) {
             const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
             cards.forEach(card => {
                 const title = card.querySelector('.card-title').textContent.toLowerCase();
                 const desc = card.querySelector('.card-desc').textContent.toLowerCase();
@@ -323,13 +295,14 @@
             });
         });
 
-        // 2. Chức năng Lọc Danh Mục
+        // 2. Lọc danh mục
         const filterBtns = document.querySelectorAll('.filter-btn');
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 const filter = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('.card');
 
                 cards.forEach(card => {
                     if (filter === 'all' || card.getAttribute('data-category') === filter) {
@@ -341,7 +314,7 @@
             });
         });
 
-        // 3. Chức năng Bật/Tắt Chế Độ Tối (Dark Mode)
+        // 3. Chế độ tối
         const themeBtn = document.getElementById('themeToggleBtn');
         themeBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
@@ -351,7 +324,7 @@
                 '<i class="fa-solid fa-moon"></i> <span>Giao diện tối</span>';
         });
 
-        // 4. Nút Lên Đầu Trang
+        // 4. Back to top
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
