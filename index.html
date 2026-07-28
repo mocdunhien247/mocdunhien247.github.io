@@ -3,23 +3,454 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MỘC DU NHIÊN - TRẠM TÁM 247</title>
+    <title>MỘC DU NHIÊN - TRẠM TÁM 247 | Share tài liệu & Khóa học miễn phí</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; text-align: center; }
-        header { background: #333; color: white; padding: 20px; border-radius: 8px; }
-        h1 { margin: 0; }
-        p { font-size: 1.2rem; color: #555; }
-        .content { margin-top: 30px; background: white; padding: 20px; border-radius: 8px; display: inline-block; }
+        :root {
+            --primary-color: #2c5e3b;
+            --primary-hover: #1e4228;
+            --accent-color: #e2a03f;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2b2d42;
+            --text-muted: #6c757d;
+            --border-color: #e9ecef;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .logo i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, #2c5e3b 0%, #1e4228 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            padding: 5px 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 10px 15px;
+            flex: 1;
+            font-size: 0.95rem;
+            border-radius: 30px;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Main Content Layout */
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2.8fr 1fr;
+            gap: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section-title i {
+            color: var(--primary-color);
+        }
+
+        /* Resource Grid */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .card-tag {
+            background: #eef7ed;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            text-align: center;
+        }
+
+        .btn-download:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Sidebar Widgets */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            margin-bottom: 25px;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .notice-list {
+            list-style: none;
+        }
+
+        .notice-list li {
+            font-size: 0.9rem;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .notice-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e2520;
+            color: #b0b7b1;
+            padding: 40px 20px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Header Navigation -->
     <header>
-        <h1>MỘC DU NHIÊN - TRẠM TÁM 247</h1>
-        <p>Share tài liệu, khóa học chính thống miễn phí</p>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-seedling"></i>
+                <span>MỘC DU NHIÊN</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+                    <li><a href="#"><i class="fa-solid fa-book-open"></i> Khóa học</a></li>
+                    <li><a href="#"><i class="fa-solid fa-folder-open"></i> Tài liệu</a></li>
+                    <li><a href="#"><i class="fa-solid fa-bullhorn"></i> Thông báo</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <div class="content">
-        <h2>Trang báo chí / tin tức chính thức</h2>
-        <p>Chào mừng bạn đến với trang web của Mộc Du Nhiên. Các bài viết mới sẽ được cập nhật liên tục tại đây!</p>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MỘC DU NHIÊN - TRẠM TÁM 247</h1>
+            <p>Chia sẻ kho tài liệu phong phú, giáo trình chuẩn & các khóa học miễn phí dành cho cộng đồng</p>
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm tài liệu, khóa học...">
+                <button><i class="fa-solid fa-magnifying-glass"></i> Tìm kiếm</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Layout -->
+    <div class="main-wrapper">
+        <main>
+            <h2 class="section-title">
+                <i class="fa-solid fa-graduation-cap"></i> Tài Liệu & Khóa Học Mới Nhất
+            </h2>
+            
+            <div class="resource-grid">
+                
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-body">
+                        <span class="card-tag">Tài Liệu Ngoại Ngữ</span>
+                        <h3 class="card-title">Bộ Giáo Trình Tiếng Anh Giao Tiếp Thực Tế</h3>
+                        <p class="card-desc">Tổng hợp Ebook & Audio luyện phản xạ Tiếng Anh cấp tốc đầy đủ các chủ đề.</p>
+                        <a href="#" class="btn-download">
+                            <i class="fa-solid fa-download"></i> Xem & Tải Về
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-body">
+                        <span class="card-tag">Khóa Học Miễn Phí</span>
+                        <h3 class="card-title">Khóa Học Photoshop & Thiết Kế Đồ Họa Cơ Bản</h3>
+                        <p class="card-desc">Bộ video bài giảng từng bước dành cho người mới bắt đầu thiết kế banner, hình ảnh.</p>
+                        <a href="#" class="btn-download">
+                            <i class="fa-solid fa-download"></i> Xem & Tải Về
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-body">
+                        <span class="card-tag">Kỹ Năng Văn Phòng</span>
+                        <h3 class="card-title">Tổng Hợp 100+ Mẫu Excel Kế Toán & Quản Lý</h3>
+                        <p class="card-desc">File Excel tính toán sẵn công thức giúp tối ưu công việc quản lý thu chi, nhân sự.</p>
+                        <a href="#" class="btn-download">
+                            <i class="fa-solid fa-download"></i> Xem & Tải Về
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-body">
+                        <span class="card-tag">Tài Liệu Chuyên Ngành</span>
+                        <h3 class="card-title">Sổ Tay Marketing & Xây Dựng Thương Hiệu</h3>
+                        <p class="card-desc">Tài liệu hướng dẫn lập kế hoạch Truyền thông & Marketing chi tiết từ A-Z.</p>
+                        <a href="#" class="btn-download">
+                            <i class="fa-solid fa-download"></i> Xem & Tải Về
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-widget">
+                <h3 class="widget-title">
+                    <i class="fa-solid fa-bell"></i> Thông Báo Từ Trạm 247
+                </h3>
+                <ul class="notice-list">
+                    <li>📢 Tất cả tài liệu tại Trạm Tám 247 đều hoàn toàn miễn phí.</li>
+                    <li>🔄 Bài viết mới được cập nhật liên tục vào mỗi tuần.</li>
+                    <li>📩 Liên hệ hỗ trợ nếu link tải gặp sự cố.</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">
+                    <i class="fa-solid fa-heart"></i> Về Mộc Du Nhiên
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    Trạm Tám 247 là nơi sưu tầm và lưu trữ những tri thức, tài liệu chất lượng, hỗ trợ các bạn tự học và phát triển bản thân mỗi ngày.
+                </p>
+            </div>
+        </aside>
+
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3 style="color: white; margin-bottom: 5px;">MỘC DU NHIÊN - TRẠM TÁM 247</h3>
+                <p style="font-size: 0.85rem;">Website chia sẻ tri thức & tài liệu học tập chính thống.</p>
+            </div>
+            <div>
+                <p style="font-size: 0.85rem;"><i class="fa-solid fa-envelope"></i> Email: nguyenye742@gmail.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 Mộc Du Nhiên - Trạm Tám 247. Powered by GitHub Pages.
+        </div>
+    </footer>
+
 </body>
 </html>
