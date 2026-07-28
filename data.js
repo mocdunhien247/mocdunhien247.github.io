@@ -19,5 +19,12 @@ const resourcesData = [
         title: "🎬 [Shorts] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí (1.1)",
         desc: "Video ngắn tóm tắt kiến thức Bài 1: Làm quen với Vật lí. Tải file PDF tài liệu chi tiết tại trang web.",
         link: "https://youtu.be/hzhv-_aaVU0"
+    },
+    {
+        tagName: "Video YouTube",
+        category: "khoa-hoc",
+        title: "🎬 [Bài Giảng] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí (1.2)",
+        desc: "Video bài giảng chi tiết Bài 1 (Phần 1.2). Xem video và tải tài liệu PDF đính kèm tại website.",
+        link: "https://youtu.be/dabH26uQxjQ"
     }
 ];
