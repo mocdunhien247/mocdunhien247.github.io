@@ -16,8 +16,8 @@ const resourcesData = [
     {
         tagName: "Video YouTube",
         category: "khoa-hoc",
-        title: "🎬 [Video] VẬT LÝ 10 - Bài 1: Làm Quen Với Vật Lí",
-        desc: "Video bài giảng chi tiết Bài 1: Làm quen với Vật lí (Vật lý 10). Tải tài liệu đính kèm trên website.",
+        title: "🎬 [Shorts] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí (1.1)",
+        desc: "Video ngắn tóm tắt kiến thức Bài 1: Làm quen với Vật lí. Tải file PDF tài liệu chi tiết tại trang web.",
         link: "https://youtu.be/hzhv-_aaVU0"
     }
 ];
