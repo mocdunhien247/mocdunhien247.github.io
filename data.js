@@ -50,5 +50,14 @@ const resourcesData = [
         title: "🎬 [Bài Giảng] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí (1.4)",
         desc: "Video bài giảng chi tiết Bài 1: Làm quen với Vật lí (Phần 1.4). Tải file PDF đính kèm tại website.",
         link: "DÁN_LINK_VIDEO_1_4_VÀO_ĐÂY"
+    },
+
+    // --- VIDEO TOÁN 11 MỚI BỔ SUNG ---
+    {
+        tagName: "Toán 11",
+        category: "khoa-hoc",
+        title: "🎬 [Bài Giảng] TOÁN 11 - CHƯƠNG 1 : HÀM SỐ LƯỢNG GIÁC VÀ PHƯƠNG TRÌNH LƯỢNG GIÁC - CHỦ ĐỀ 1 : GÓC LƯỢNG GIÁC VÀ ĐĐC",
+        desc: "Video bài giảng Toán 11. Tải file PDF đề thi & lời giải tại Website: https://mocdunhien247.github.io/",
+        link: "https://youtu.be/Qaea8jRBUhE"
     }
 ];
