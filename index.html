@@ -1,75 +1,341 @@
-<!-- ================================================== -->
-<!-- 1. MỤC BÌNH LUẬN (Dùng Utterances hoặc Disqus) -->
-<!-- ================================================== -->
-<section id="comments-section" style="max-width: 800px; margin: 40px auto; padding: 20px;">
-    <h3 style="border-bottom: 2px solid #007bff; padding-bottom: 8px;">💬 Bình luận & Thắc mắc</h3>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MỘC DU NHIÊN - TRẠM TÁM 247 | Share tài liệu & Khóa học miễn phí</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Nhúng Utterances (Bình luận lưu vào GitHub Issues) -->
-    <!-- Thay 'ten-user-github/ten-repo' bằng repo GitHub của bạn -->
-    <script src="https://utteranc.es/client.js"
-            repo="mocdunhien247/mocdunhien247.github.io"
-            issue-term="pathname"
-            label="comment"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
+    <style>
+        :root {
+            --primary-color: #2c5e3b;
+            --primary-hover: #1e4228;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2b2d42;
+            --text-muted: #6c757d;
+            --border-color: #e9ecef;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+            --radius: 12px;
+        }
+
+        body.dark-mode {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: #2d2d2d;
+            --shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; padding: 15px 20px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none; color: var(--primary-color);
+            font-weight: 700; font-size: 1.25rem;
+        }
+
+        .theme-toggle {
+            background: none; border: 1px solid var(--border-color);
+            color: var(--text-main); padding: 8px 12px; border-radius: 20px;
+            cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2c5e3b 0%, #1e4228 100%);
+            color: white; padding: 50px 20px; text-align: center;
+        }
+
+        .hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 25px; }
+
+        .search-box {
+            display: flex; max-width: 500px; margin: 0 auto;
+            background: white; border-radius: 30px; padding: 5px 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .search-box input {
+            border: none; outline: none; padding: 10px 15px;
+            flex: 1; font-size: 0.95rem; border-radius: 30px; color: #333;
+        }
+
+        .filter-container {
+            display: flex; justify-content: center; gap: 10px;
+            margin: 30px 0 10px 0; flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--card-bg); color: var(--text-main);
+            border: 1px solid var(--border-color); padding: 8px 18px;
+            border-radius: 20px; cursor: pointer; font-weight: 600;
+            font-size: 0.85rem; transition: all 0.2s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color); color: white; border-color: var(--primary-color);
+        }
+
+        .main-wrapper {
+            max-width: 1200px; margin: 20px auto 40px auto; padding: 0 20px;
+            display: grid; grid-template-columns: 2.8fr 1fr; gap: 30px;
+        }
+
+        .section-title {
+            font-size: 1.4rem; font-weight: 700; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px;
+            border-bottom: 2px solid var(--border-color); padding-bottom: 10px;
+        }
+
+        .resource-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg); border-radius: var(--radius);
+            box-shadow: var(--shadow); border: 1px solid var(--border-color);
+            overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
+            display: flex; flex-direction: column;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card-tag {
+            background: #eef7ed; color: var(--primary-color);
+            font-size: 0.75rem; font-weight: 700; padding: 4px 10px;
+            border-radius: 20px; display: inline-block; margin-bottom: 10px; width: fit-content;
+        }
+
+        .card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+        .card-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+        .card-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; flex: 1; }
+
+        .btn-download {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            background: var(--primary-color); color: white; text-decoration: none;
+            padding: 10px 15px; border-radius: 8px; font-weight: 600; font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover { background: var(--primary-hover); }
+
+        .sidebar-widget {
+            background: var(--card-bg); padding: 20px; border-radius: var(--radius);
+            box-shadow: var(--shadow); border: 1px solid var(--border-color); margin-bottom: 25px;
+        }
+
+        .widget-title {
+            font-size: 1rem; font-weight: 700; margin-bottom: 15px;
+            color: var(--primary-color); display: flex; align-items: center; gap: 8px;
+        }
+
+        .notice-list { list-style: none; }
+        .notice-list li { font-size: 0.85rem; padding: 8px 0; border-bottom: 1px dashed var(--border-color); }
+
+        footer {
+            background: #181d19; color: #b0b7b1; padding: 30px 20px 20px 20px; margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px; margin: 0 auto; display: flex;
+            justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+        }
+
+        #backToTop {
+            position: fixed; bottom: 30px; right: 30px; background: var(--primary-color);
+            color: white; border: none; width: 40px; height: 40px; border-radius: 50%;
+            cursor: pointer; display: none; align-items: center; justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-seedling"></i>
+                <span>MỘC DU NHIÊN</span>
+            </a>
+            <button class="theme-toggle" id="themeToggleBtn">
+                <i class="fa-solid fa-moon"></i> <span>Giao diện tối</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>MỘC DU NHIÊN - TRẠM TÁM 247</h1>
+            <p>Chia sẻ kho tài liệu phong phú, giáo trình chuẩn & các khóa học miễn phí</p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Gõ từ khóa để tìm kiếm nhanh...">
+            </div>
+        </div>
+    </section>
+
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">Tất Cả</button>
+        <button class="filter-btn" data-filter="ngoai-ngu">Ngoại Ngữ</button>
+        <button class="filter-btn" data-filter="khoa-hoc">Khóa Học</button>
+        <button class="filter-btn" data-filter="tin-hoc">Tin Học Văn Phòng</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+    </div>
+
+    <div class="main-wrapper">
+        <main>
+            <h2 class="section-title">
+                <i class="fa-solid fa-graduation-cap"></i> Danh Sách Tài Liệu
+            </h2>
+            <div class="resource-grid" id="resourceGrid">
+                <!-- Tự động đổ dữ liệu từ data.js -->
+            </div>
+        </main>
+
+        <aside>
+            <div class="sidebar-widget">
+                <h3 class="widget-title"><i class="fa-solid fa-bell"></i> Thông Báo Trạm 247</h3>
+                <ul class="notice-list">
+                    <li>📢 Tài liệu được chia sẻ hoàn toàn miễn phí.</li>
+                    <li>🔄 Nội dung mới cập nhật hàng tuần.</li>
+                    <li>📩 Liên hệ hỗ trợ nếu link tải gặp sự cố.</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title"><i class="fa-solid fa-heart"></i> Về Mộc Du Nhiên</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">
+                    Nơi sưu tầm và chia sẻ nguồn tri thức chất lượng giúp bạn tự học mỗi ngày.
+                </p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3 style="color: white; margin-bottom: 5px;">MỘC DU NHIÊN - TRẠM TÁM 247</h3>
+                <p style="font-size: 0.8rem;">Chia sẻ tri thức & tài liệu học tập chính thống.</p>
+            </div>
+            <div>
+                <p style="font-size: 0.8rem;"><i class="fa-solid fa-envelope"></i> Email: nguyenye742@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- Nối file dữ liệu data.js -->
+    <script src="data.js"></script>
+
+    <script>
+        const grid = document.getElementById('resourceGrid');
+        
+        function renderCards() {
+            if (typeof resourcesData === 'undefined') return;
+            grid.innerHTML = '';
+            resourcesData.forEach(item => {
+                const cardHTML = `
+                    <div class="card" data-category="${item.category}">
+                        <div class="card-body">
+                            <span class="card-tag">${item.tagName}</span>
+                            <h3 class="card-title">${item.title}</h3>
+                            <p class="card-desc">${item.desc}</p>
+                            <a href="${item.link}" target="_blank" class="btn-download">
+                                <i class="fa-solid fa-download"></i> Xem & Tải Về
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        renderCards();
+
+        // 1. Tìm kiếm
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('keyup', function(e) {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+                if (title.includes(term) || desc.includes(term)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // 2. Lọc danh mục
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                const cards = document.querySelectorAll('.card');
+
+                cards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 3. Chế độ tối
+        const themeBtn = document.getElementById('themeToggleBtn');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            themeBtn.innerHTML = isDark ? 
+                '<i class="fa-solid fa-sun"></i> <span>Giao diện sáng</span>' : 
+                '<i class="fa-solid fa-moon"></i> <span>Giao diện tối</span>';
+        });
+
+        // 4. Back to top
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
-</section>
-
-
-<!-- ================================================== -->
-<!-- 2. NÚT NHẮN TIN TRỰC TIẾP (NỔI Ở GÓC DƯỚI BÊN PHẢI) -->
-<!-- ================================================== -->
-<div class="chat-widget">
-    <!-- Nút Zalo (Thay 0123456789 bằng SĐT Zalo của bạn) -->
-    <a href="https://zalo.me/0123456789" target="_blank" class="chat-btn zalo-btn" title="Chat qua Zalo">
-        <span>Zalo</span>
-    </a>
-
-    <!-- Nút Messenger (Thay your-facebook-username bằng Fanpage/Trang cá nhân Messenger) -->
-    <a href="https://m.me/your-facebook-username" target="_blank" class="chat-btn messenger-btn" title="Chat qua Messenger">
-        <span>Messenger</span>
-    </a>
-</div>
-
-<!-- Styling cho nút nhắn tin -->
-<style>
-.chat-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 9999;
-}
-
-.chat-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 13px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.chat-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-}
-
-.zalo-btn {
-    background-color: #0088FF;
-}
-
-.messenger-btn {
-    background-color: #0084FF;
-    background: linear-gradient(45deg, #0084FF, #A033FF);
-}
-</style>
+</body>
+</html>
