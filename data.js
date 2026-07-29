@@ -1,5 +1,5 @@
 const resourcesData = [
-    // --- 2 ĐỀ ÔN TẬP PHÍA TRÊN ---
+    // --- 2 ĐỀ ÔN TẬP VẬT LÝ 10 ---
     {
         tagName: "Vật Lý 10",
         category: "khoa-hoc",
@@ -15,7 +15,7 @@ const resourcesData = [
         link: "https://drive.google.com/file/d/1jPcTrVIUK_PaGMVyXu7FMGdvsks5vNV9/view?usp=sharing"
     },
 
-    // --- 5 VIDEO BÀI 1 THEO ĐÚNG THỨ TỰ ---
+    // --- BÀI GIẢNG VẬT LÝ 10 ---
     {
         tagName: "Video YouTube",
         category: "khoa-hoc",
@@ -28,7 +28,7 @@ const resourcesData = [
         category: "khoa-hoc",
         title: "🎬 [Bài Giảng] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí (1.1)",
         desc: "Video bài giảng chi tiết Bài 1: Làm quen với Vật lí (Phần 1.1). Tải file PDF đính kèm tại website.",
-        link: "#" // Cập nhật link mới tại đây
+        link: ""
     },
     {
         tagName: "Video YouTube",
@@ -42,22 +42,22 @@ const resourcesData = [
         category: "khoa-hoc",
         title: "🎬 [Bài Giảng] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí (1.3)",
         desc: "Video bài giảng chi tiết Bài 1: Làm quen với Vật lí (Phần 1.3). Tải file PDF đính kèm tại website.",
-        link: "#" // Đang cập nhật lại link
+        link: ""
     },
     {
         tagName: "Video YouTube",
         category: "khoa-hoc",
         title: "🎬 [Bài Giảng] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí (1.4)",
         desc: "Video bài giảng chi tiết Bài 1: Làm quen với Vật lí (Phần 1.4). Tải file PDF đính kèm tại website.",
-        link: "#" // Đang cập nhật lại link
+        link: ""
     },
 
-    // --- VIDEO TOÁN 11 ---
+    // --- BÀI GIẢNG TOÁN 11 ---
     {
         tagName: "Toán 11",
         category: "khoa-hoc",
         title: "🎬 [Bài Giảng] TOÁN 11 - CHƯƠNG 1 : HÀM SỐ LƯỢNG GIÁC VÀ PHƯƠNG TRÌNH LƯỢNG GIÁC - CHỦ ĐỀ 1 : GÓC LƯỢNG GIÁC VÀ ĐĐC",
-        desc: "Video bài giảng Toán 11. Tải file PDF đề thi & lời giải tại Website: https://mocdunhien247.github.io/",
+        desc: "Tải file PDF đề thi & lời giải tại Website: https://mocdunhien247.github.io/",
         link: "https://youtu.be/Qaea8jRBUhE"
     }
 ];
