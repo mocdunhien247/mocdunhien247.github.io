@@ -1,4 +1,3 @@
-// Khai báo mảng chứa dữ liệu
 let resourcesData = [];
 
 // Tải dữ liệu từ file resources.json
@@ -11,16 +10,12 @@ fetch('./resources.json')
   })
   .then(data => {
     resourcesData = data;
-
-    // Tự động tìm và gọi hàm hiển thị danh sách trên trang web của bạn
+    
+    // Đã tải xong dữ liệu -> Gọi hàm renderCards() để hiện lên màn hình ngay!
     if (typeof renderCards === 'function') {
-      renderCards(resourcesData);
-    } else if (typeof renderResources === 'function') {
-      renderResources(resourcesData);
-    } else if (typeof displayResources === 'function') {
-      displayResources(resourcesData);
-    } else if (typeof renderData === 'function') {
-      renderData(resourcesData);
+      renderCards();
     }
   })
-  .catch(error => console.error("Lỗi tải dữ liệu:", error));
+  .catch(error => {
+    console.error("Lỗi tải dữ liệu:", error);
+  });
