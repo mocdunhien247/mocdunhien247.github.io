@@ -28,7 +28,7 @@ const resourcesData = [
         category: "khoa-hoc",
         title: "🎬 [Bài Giảng] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí (1.1)",
         desc: "Video bài giảng chi tiết Bài 1: Làm quen với Vật lí (Phần 1.1). Tải file PDF đính kèm tại website.",
-        link: "DÁN_LINK_VIDEO_1_1_VÀO_ĐÂY"
+        link: "#" // Cập nhật link mới tại đây
     },
     {
         tagName: "Video YouTube",
@@ -42,17 +42,17 @@ const resourcesData = [
         category: "khoa-hoc",
         title: "🎬 [Bài Giảng] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí (1.3)",
         desc: "Video bài giảng chi tiết Bài 1: Làm quen với Vật lí (Phần 1.3). Tải file PDF đính kèm tại website.",
-        link: "DÁN_LINK_VIDEO_1_3_VÀO_ĐÂY"
+        link: "#" // Đang cập nhật lại link
     },
     {
         tagName: "Video YouTube",
         category: "khoa-hoc",
         title: "🎬 [Bài Giảng] VẬT LÝ 10 - BÀI 1: Làm quen với Vật lí (1.4)",
         desc: "Video bài giảng chi tiết Bài 1: Làm quen với Vật lí (Phần 1.4). Tải file PDF đính kèm tại website.",
-        link: "DÁN_LINK_VIDEO_1_4_VÀO_ĐÂY"
+        link: "#" // Đang cập nhật lại link
     },
 
-    // --- VIDEO TOÁN 11 MỚI BỔ SUNG ---
+    // --- VIDEO TOÁN 11 ---
     {
         tagName: "Toán 11",
         category: "khoa-hoc",
