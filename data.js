@@ -51,4 +51,12 @@ const resourcesData = [
         desc: "Video bài giảng chi tiết Bài 1: Làm quen với Vật lí (Phần 1.4). Tải file PDF đính kèm tại website.",
         link: "DÁN_LINK_VIDEO_1_4_VÀO_ĐÂY"
     }
+    {
+        tagName: "Video YouTube",
+        category: "khoa-hoc", // Hoặc đổi sang "toan-11" tùy theo phân loại category trên website của bạn
+        title: "🎬 [Bài Giảng] TOÁN 11 - CHƯƠNG 1 : HÀM SỐ LƯỢNG GIÁC VÀ PHƯƠNG TRÌNH LƯỢNG GIÁC - CHỦ ĐỀ 1 : GÓC LƯỢNG GIÁC VÀ ĐĐC",
+        desc: "Video bài giảng chi tiết Chủ đề 1: Góc lượng giác và ĐĐC (Toán 11 - Chương 1). Tải file PDF đính kèm tại website.",
+        link: "https://youtu.be/Qaea8jRBUhE"
+    }
 ];
+
